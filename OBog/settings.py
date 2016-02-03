@@ -38,6 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'ckeditor',
+    'ckeditor_uploader',
+    'crispy_forms',
+    'django_select2',
 
     'Ebog',
 )

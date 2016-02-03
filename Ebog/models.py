@@ -17,13 +17,13 @@ class tag(models.Model):
 
 class section(models.Model):
     title = models.CharField
-    pages = models.ManyToManyRel(page)
+    pages = models.ManyToManyField(page)
 
     description = models.TextField
 
-    tags = models.ManyToManyRel(tag)
+    tags = models.ManyToManyField(tag)
 
-    author = models.ManyToOneRel(User)
+    author = models.ManyToOneFeild(User)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -34,9 +34,9 @@ class page(models.Model):
 
     description = models.TextField
 
-    tags = models.ManyToManyRel(tag)
+    tags = models.ManyToManyField(tag)
 
-    author = models.ManyToOneRel(User)
+    author = models.ManyToOneField(User)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -45,13 +45,13 @@ class page(models.Model):
 class book(models.Model):
     slug = models.SlugField
     title = models.CharField
-    sections = models.ManyToManyRel(section)
+    sections = models.ManyToManyField(section)
 
-    tags = models.ManyToManyRel(tag)
+    tags = models.ManyToManyField(tag)
 
     description = models.TextField
 
-    author = models.ManyToOneRel(User)
+    author = models.ManyToOneField(User)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
