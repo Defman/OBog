@@ -6,9 +6,9 @@ from sortedm2m.fields import SortedManyToManyField
 # Create your models here.
 
 
-class tag(models.Model):
+class Tag(models.Model):
     title = models.CharField(max_length=32)
-    description = models.TextField()
+    agdescription = models.TextField()
 
     author = models.ForeignKey(User)
 
@@ -16,14 +16,14 @@ class tag(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
-class page(models.Model):
+class Page(models.Model):
     title = models.CharField(max_length=32)
 
     content = RichTextField()
 
     description = models.TextField()
 
-    tags = models.ManyToManyField(tag)
+    tags = models.ManyToManyField(Tag)
 
     author = models.ForeignKey(User)
 
@@ -31,13 +31,13 @@ class page(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
-class section(models.Model):
+class Section(models.Model):
     title = models.CharField(max_length=32)
-    pages = SortedManyToManyField(page)
+    pages = SortedManyToManyField(Page)
 
     description = models.TextField()
 
-    tags = models.ManyToManyField(tag)
+    tags = models.ManyToManyField(Tag)
 
     author = models.ForeignKey(User)
 
@@ -45,12 +45,12 @@ class section(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
-class book(models.Model):
+class Book(models.Model):
     slug = models.SlugField()
     title = models.CharField(max_length=32)
-    sections = SortedManyToManyField(section)
+    sections = SortedManyToManyField(Section)
 
-    tags = models.ManyToManyField(tag)
+    tags = models.ManyToManyField(Tag)
 
     description = models.TextField()
 
