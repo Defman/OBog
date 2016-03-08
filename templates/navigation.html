@@ -8,21 +8,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">OBog</a>
+      <a class="navbar-brand logo-font" href="{% url "front:index" %}">OBog</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Bøger</a></li>
+        <li><a href="{% url "front:index" %}">Home</a></li>
+        <li><a href="{% url "store:index" %}">Bøger</a></li>
       {% if request.user.is_authenticated %}
-          <li><a href="#">Mine bøger</a></li>
+          <li><a href="{% url "user:books" %}">Mine bøger</a></li>
       {% endif %}
       </ul>
       <ul class="nav navbar-nav navbar-right">
           {% if request.user.is_authenticated %}
-              <li><a href="#">Min konto</a></li>
+              <li><a href="{% url "user:profile" %}">Min konto</a></li>
           {% else %}
               <li><a href="#">Opret konto</a></li>
               <li><a href="#">Login</a></li>

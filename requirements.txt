@@ -1,5 +1,8 @@
 Django>1.9
 django-ckeditor
+sorl-thumbnail
+django-taggit
+django-easy-select2
 django-crispy-forms
 django-sortedm2m
 sorl-thumbnail

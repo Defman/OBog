@@ -2,18 +2,10 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 from sortedm2m.fields import SortedManyToManyField
+from sorl.thumbnail import ImageField
+from taggit.managers import TaggableManager
 
 # Create your models here.
-
-
-class Tag(models.Model):
-    title = models.CharField(max_length=32)
-    agdescription = models.TextField()
-
-    author = models.ForeignKey(User)
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
 
 class Page(models.Model):
@@ -23,7 +15,7 @@ class Page(models.Model):
 
     description = models.TextField()
 
-    tags = models.ManyToManyField(Tag)
+    tags = TaggableManager()
 
     author = models.ForeignKey(User)
 
@@ -37,7 +29,7 @@ class Section(models.Model):
 
     description = models.TextField()
 
-    tags = models.ManyToManyField(Tag)
+    tags = TaggableManager()
 
     author = models.ForeignKey(User)
 
@@ -50,11 +42,13 @@ class Book(models.Model):
     title = models.CharField(max_length=32)
     sections = SortedManyToManyField(Section)
 
-    tags = models.ManyToManyField(Tag)
+    thumbnail = ImageField(null=True, upload_to="/books/thumbnails")
+
+    tags = TaggableManager()
 
     description = models.TextField()
 
-    author = models.ForeignKey(User)
+    author = models.ManyToManyField(User)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -3,5 +3,7 @@ from django.conf.urls import url
 from .views import *
 
 urlpatterns = [
-    url(r'^create/$', Book.create.as_view(), name="create"),
+    url(r'^create/$', Book.Create.as_view(), name="create"),
+    url(r'^section/create$', Section.Create.as_view(), name="create"),
+    url(r'^section/page/create/$', Page.Create.as_view(), name="create_page"),
 ]

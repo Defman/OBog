@@ -39,9 +39,14 @@ INSTALLED_APPS = (
     'ckeditor',
     'ckeditor_uploader',
     'crispy_forms',
+    'sorl.thumbnail',
+    "taggit",
+    "easy_select2",
 
     'Ebog',
     'front',
+    'store',
+    'bookprofile',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -126,6 +131,14 @@ CKEDITOR_RESTRICT_BY_USER = True
 CKEDITOR_BROWSE_SHOW_DIRS = True
 
 CKEDITOR_IMAGE_BACKEN = 'pillow'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': "full",
+        'width': "auto",
+        'height': "auto",
+    },
+}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
