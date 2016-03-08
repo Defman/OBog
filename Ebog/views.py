@@ -16,6 +16,8 @@ class Book:
         template_name = "form.html"
         form_class = BookFormCreate
 
+
+
     class Edit(generic.UpdateView):
         model = Book
         form_class = BookFormCreate

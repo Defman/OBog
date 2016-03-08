@@ -42,11 +42,11 @@ class Book(models.Model):
     title = models.CharField(max_length=32)
     sections = SortedManyToManyField(Section)
 
-    thumbnail = ImageField(null=True, upload_to="/books/thumbnails")
-
-    tags = TaggableManager()
+    thumbnail = ImageField(upload_to="/books/thumbnails", null=True)
 
     description = models.TextField()
+
+    tags = TaggableManager()
 
     author = models.ManyToManyField(User)
 
