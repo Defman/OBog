@@ -1,4 +1,6 @@
+{% extends "base.html" %}
 {% load thumbnail %}
+{% block content %}
 {% if book_list %}
     {% for book in book_list %}
         <div class="row">
@@ -33,3 +35,4 @@
 {% else %}
     <h1>There's no books</h1>
 {% endif %}
+{% endblock %}
