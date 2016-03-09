@@ -17,6 +17,17 @@
       {% for imgurl in view.images %}
           <div class="item{% if forloop.first %} active{% endif %}">
                 <img style="width: 100%" src="{{ imgurl }}">
+          {% if forloop.counter0 == 0 %}
+            <div class="carousel-caption custom-carousel-caption">
+                <h3 style = "font-size: 3rem">101: How to Compute</h3>
+                <p style = "font-size: 2.5rem; -webkit-text-stroke-width: 0.03rem;">Læs den spændende bestseller af Mads Kongstad. En dramatisk historie om hvordan en person kan læse denne bog!</p>
+            </div>
+          {% elif forloop.counter0 == 1 %}
+              <div class="carousel-caption custom-carousel-caption">
+               <h3 style = "font-size: 3rem">101: How to Compute</h3>
+              <p style = "font-size: 2.5rem; -webkit-text-stroke-width: 0.03rem;">Læs den successfulde efterfølger til bestselleren "101: How to compute". I "404: How to Compute" lærer du alt om hvordan ting ikke virker.</p>
+              </div>
+          {% endif %}
         </div>
       {% endfor %}
   </div>
@@ -31,4 +42,24 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+    <div>
+        <div class = "center">
+            <a href="LOG IDN">
+                <h1>
+                    <button type="button" class="btn btn-primary btn-lg" style = "width: 40rem; max-width: 100%; font-size: 5rem">Log Ind</button>
+                </h1>
+            </a>
+            <a href="LOG IDN">
+                <h1>
+                    <button type="button" class="btn btn-primary btn-lg" style = "width: 40rem; max-width: 100%; font-size: 5rem">Opret</button>
+                </h1>
+            </a>
+        </div>
+
+
+    </div>
+
+
+
 </body>

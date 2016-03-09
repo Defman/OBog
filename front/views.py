@@ -6,7 +6,7 @@ from django.contrib.staticfiles.templatetags.staticfiles import static
 class index(generic.TemplateView):
     template_name = "index.html"
 
-    title = "Obog - the future is here"
+    title = "Obog - The New Future"
     description = ""
 
     images = []
