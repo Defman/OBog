@@ -25,3 +25,7 @@
     /*background: linear-gradient(#D1D1D1 , #E0E0E0);*/
 
 }
+
+.custom-control {
+    background-color: transparent !important;
+}
