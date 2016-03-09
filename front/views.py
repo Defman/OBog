@@ -1,5 +1,6 @@
 from django.contrib.messages import get_messages
 from django.views import generic
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
 
 class index(generic.TemplateView):
@@ -7,6 +8,12 @@ class index(generic.TemplateView):
 
     title = "Obog - the future is here"
     description = ""
+
+    images = []
+
+    images.append(static("img/101_how_to_cpomute.png"))
+    images.append(static("img/404_how_to_copmute.png"))
+
 
 
 class about(generic.TemplateView):

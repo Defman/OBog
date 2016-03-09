@@ -1,10 +1,35 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
 {% block content %}
-    <div class="row">
-    <div class="col-lg-3">
-        <p>test</p>
-    </div>
-    <div class="col-lg-9"></div>
-        <p>test</p>
-    </div>
+<div id="carousel-index-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+      {% for img in view.images %}
+        <li data-target="#carousel-index-generic" data-slide-to="{{ forloop.counter0 }}"{% if forloop.first %} class="active">{% endif %}</li>'
+      {% endfor %}
+  </ol>
+
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+      {% for imgurl in view.images %}
+          {% thumbnail imgurl "400x1600" as im %}
+            <div class="item active">
+                <img src="{{ im.url }}">
+            </div>
+          {% endthumbnail %}
+      {% endfor %}
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 {% endblock %}
