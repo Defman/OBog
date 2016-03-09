@@ -24,6 +24,8 @@ class Book:
         form_class = BookFormCreate
         success_url = reverse_lazy('ebook:list')
 
+
+
     class Edit(generic.UpdateView):
         model = Book
         form_class = BookFormCreate

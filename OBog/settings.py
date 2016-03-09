@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     "taggit",
     "easy_select2",
+    'sortedm2m',
 
     'Ebog',
     'front',
@@ -151,5 +152,5 @@ CACHES = {
     }
 }
 
-THUMBNAIL_DEBUG = False
+THUMBNAIL_DEBUG = True
 THUMBNAIL_FORMAT = 'PNG'
