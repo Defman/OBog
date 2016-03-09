@@ -42,7 +42,7 @@ class Book(models.Model):
     title = models.CharField(max_length=32)
     sections = SortedManyToManyField(Section)
 
-    thumbnail = ImageField(upload_to="/books/thumbnails", null=True)
+    thumbnail = ImageField(upload_to="books/thumbnails")
 
     description = models.TextField()
 

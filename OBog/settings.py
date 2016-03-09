@@ -143,3 +143,13 @@ CKEDITOR_CONFIGS = {
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 django.contrib.auth.LOGIN_URL = '/'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'my_cache_table',
+    }
+}
+
+THUMBNAIL_DEBUG = True
+THUMBNAIL_FORMAT = 'PNG'

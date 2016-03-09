@@ -7,6 +7,8 @@ from front import urls as front
 from Ebog import urls as ebook
 from store import urls as store
 from bookprofile import urls as profile
+from django.conf import settings
+from django.conf.urls.static import static
 
 admin.autodiscover()
 
@@ -20,5 +22,4 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='auth_login'),
-]
-
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
