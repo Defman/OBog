@@ -7,3 +7,4 @@ django-crispy-forms
 django-sortedm2m
 sorl-thumbnail
 pillow
+django-filter

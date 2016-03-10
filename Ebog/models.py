@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from sortedm2m.fields import SortedManyToManyField
 from sorl.thumbnail import ImageField
 from taggit.managers import TaggableManager
+from django.core.urlresolvers import reverse
 
 # Create your models here.
 
@@ -52,3 +53,6 @@ class Book(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        reverse("ebook:detail", self.slug);
