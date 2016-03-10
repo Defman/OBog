@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout_then_login, {'login_url':'/login/'}, name='logout'),
     url(r'^', include(front, namespace="front")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

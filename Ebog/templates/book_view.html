@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 
 {% block content %}
 
-    
-
+    <div class="row">
+        <div class="col-xs-2">
+            {% thumbnail book.thumbnail "160x160" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            {% endthumbnail %}
+        </div>
+        <div class="col-xs-10">
+            <h1>{{ book.title }}</h1>
+        </div>
+    </div>
 {% endblock %}

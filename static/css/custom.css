@@ -46,3 +46,7 @@
     margin-right: auto;
     text-align: center;
 }
+
+.django-ckeditor-widget {
+    width: 100%;
+}

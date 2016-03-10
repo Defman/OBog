@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '#!^63$(nlypz)dgj^2_mu&f0w9ydps&3dqxpiqf!sm)n+@^z$_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -142,8 +142,6 @@ CKEDITOR_CONFIGS = {
 }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-
-django.contrib.auth.LOGIN_URL = '/'
 
 CACHES = {
     'default': {
