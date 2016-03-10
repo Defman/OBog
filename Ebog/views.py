@@ -26,7 +26,7 @@ class BookView:
 
         def form_valid(self, form):
             form.instance.author = self.request.user
-            form.instance.slug = self.title
+            form.instance.slug = form.instance.title
             return super(BookView.Create, self).form_valid(form)
 
     class Edit(generic.UpdateView):
