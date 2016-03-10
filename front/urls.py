@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^about$', about.as_view(), name="about"),
     url(r'^credits$', credits.as_view(), name="credits"),
     url(r'^contact$', ContactView.as_view(), name="contact"),
+    url(r'^thankyou$', ThankYou.as_view(), name="thankyou"),
 ]

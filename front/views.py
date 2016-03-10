@@ -3,6 +3,7 @@ from django.views import generic
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from .forms import *
 from django.contrib import messages
+from django.core.urlresolvers import reverse_lazy
 
 
 class index(generic.TemplateView):
@@ -34,8 +35,8 @@ class credits(generic.TemplateView):
 class ContactView(generic.FormView):
     form_class = ContactForm
     template_name = "form.html"
-    success_url = ""
+    success_url = reverse_lazy("front:thankyou")
+    
 
-    def form_valid(self, form):
-        messages.add_message(self.request, messages.INFO, 'Hello world.')
-        return super(ContactView, self).form_valid(form)
+class ThankYou(generic.TemplateView):
+    template_name = "thankyou.html"
